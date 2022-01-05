@@ -11,6 +11,8 @@ simple.colmeans<-function(y){
 ## col 2: generation
 ## col 5: context
 ## col 7: end (fiveEnds or threeEnds, f comes before t)
+## remove or rename these constraints if irrelevant to your files!
+## if so, change line 54 accordingly
 
 # import your files
 filenames<-list.files("~/my_ends_output_matrices/",
