@@ -55,7 +55,7 @@ melt_thing<-str_split_fixed(melt.together$variable, '\\.', 10)
 meltbig<-data.frame(melt.together, end=melt_thing[,7], 
                     generation=melt_thing[,2], genotype=melt_thing[,1], context=melt_thing[,5])
 
-# for color combinations, can make new ids like so 
+# for improved coloring options, can make new ids like so 
 meltbig<-data.frame(meltbig, genotypeBygeneration=paste(meltbig$genotype, 
                                                         meltbig$generation))
 
@@ -63,7 +63,7 @@ ggplot(subset(meltbig, generation=="f2_1"|generation=="f4_1"|
                 generation=='f7_1'|generation=='f11_1' ), aes(pos, value, color=genotypeBygeneration))+
   geom_line(lwd=1)+
   theme_bw()+
-  facet_grid(context~end, scales='free_y')+
+  facet_grid(context~end, scales='free_y')+ #this puts five prime ends facing three prime 
   theme_bw(base_size = 22 )+#remove background
   
   theme(legend.title=element_blank())+
